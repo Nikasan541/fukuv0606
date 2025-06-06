@@ -28,16 +28,19 @@ namespace fukuv0606
             }
             else if (label1.Right > this.ClientSize.Width)
             {
+                spead += 200;
                 vx = -vx;
                 label1.Left = this.ClientSize.Width - label1.Width;
             }
             if (label1.Top < 0)
             {
+                spead += 200;
                 vy = -vy;
                 label1.Top = 0;
             }
             else if (label1.Bottom > this.ClientSize.Height)
             {
+                spead += 200;
                 vy = -vy;
                 label1.Top = this.ClientSize.Height - label1.Height;
             }
