@@ -3,6 +3,7 @@ namespace fukuv0606
     public partial class Form1 : Form
     {
         int vx = -4;
+        int vy = +4;
         public Form1()
         {
             InitializeComponent();
@@ -17,6 +18,7 @@ namespace fukuv0606
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Left += vx;
+            label1.Top += vy;
             if (label1.Left < 0)
             {
                 vx = -vx;
@@ -26,6 +28,16 @@ namespace fukuv0606
             {
                 vx = -vx;
                 label1.Left = this.ClientSize.Width - label1.Width;
+            }
+            if (label1.Top < 0)
+            {
+                vy = -vy;
+                label1.Top = 0;
+            }
+            else if (label1.Bottom > this.ClientSize.Height)
+            {
+                vy = -vy;
+                label1.Top = this.ClientSize.Height - label1.Height;
             }
         }
     }
